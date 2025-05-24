@@ -65,7 +65,7 @@ export default function HomePage() {
           <p className="text-muted-foreground text-sm font-medium tracking-tight">
             Made with <span className="text-red-500">♥</span> by{" "}
             <Link
-              href="https://github.com/aeonzz"
+              href="https://github.com/ATASTECH"
               target="_blank"
               className="text-foreground underline-offset-4 transition-colors hover:underline"
               prefetch
