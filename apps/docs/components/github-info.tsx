@@ -1,7 +1,7 @@
 import { type AnchorHTMLAttributes } from "react";
-import { Star } from "lucide-react";
 
 import { cn } from "../lib/cn";
+import { Star } from "./icons";
 
 async function getRepoStarsAndForks(
   owner: string,
@@ -48,7 +48,13 @@ export async function GithubInfo({
   repo: string;
   token?: string;
 }) {
-  const { stars } = await getRepoStarsAndForks(owner, repo, token);
+  let stars = 0;
+  try {
+    const result = await getRepoStarsAndForks(owner, repo, token);
+    stars = result.stars;
+  } catch (error) {
+    console.error("GitHubInfo fetch error:", error);
+  }
   const humanizedStars = humanizeNumber(stars);
 
   return (

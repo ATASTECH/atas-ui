@@ -1,5 +1,8 @@
 {
   "github": {
     "enabled": false
-  }
+  },
+  "rootDirectory": "apps/docs",
+  "buildCommand": "pnpm turbo run build --filter=docs",
+  "outputDirectory": "apps/docs/.next"
 }
