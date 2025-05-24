@@ -1,0 +1,12 @@
+{
+  "name": "badge-destructive",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "examples/badge-destructive.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\r\n\r\nexport default function BadgeDesctructive() {\r\n  return <Badge variant=\"destructive\">Destructive</Badge>;\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
