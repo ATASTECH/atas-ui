@@ -3,8 +3,8 @@ import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 import { Github } from "lucide-react";
 
 import { source } from "@/lib/source";
+import { siteConfig } from "@/config/site";
 
-import { siteConfig } from "./site";
 
 export const baseOptions: BaseLayoutProps = {
   nav: {
@@ -20,17 +20,13 @@ export const baseOptions: BaseLayoutProps = {
   },
   links: [
     {
-      text: "UI Components",
+      text: "Docs",
       url: "/docs/ui",
     },
     {
-      text: "Hooks",
-      url: "/docs/hooks",
+      text: "Components",
+      url: "/docs/ui/accordion",
     },
-      {
-        text: "Showcase",
-        url: "/showcase",
-      },
     {
       type: "icon",
       url: siteConfig.links.github,

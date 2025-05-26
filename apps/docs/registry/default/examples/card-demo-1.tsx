@@ -22,7 +22,7 @@ export default function CardDemo1() {
         <CardDescription>Frontend Developer</CardDescription>
         <CardAction>
           <Avatar>
-            <AvatarImage src="https://github.com/aeonzz.png" alt="@aeonz" />
+            <AvatarImage src="https://github.com/atastech.png" alt="@aeonz" />
             <AvatarFallback>AE</AvatarFallback>
           </Avatar>
         </CardAction>

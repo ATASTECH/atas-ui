@@ -19,24 +19,24 @@ export default function PreviewCardDemo() {
       <PreviewCardTrigger
         render={
           <Button variant="link" className="p-0">
-            @Aeonzz
+            @ATASTECH
           </Button>
         }
       />
       <PreviewCardContent className="flex w-80 items-start gap-3">
         <Avatar className="size-10">
-          <AvatarImage src="https://github.com/aeonzz.png" alt="@aeonzz" />
+          <AvatarImage src="https://github.com/atastech.png" alt="@ATASTECH" />
           <AvatarFallback>AE</AvatarFallback>
         </Avatar>
         <div className="flex w-full flex-col gap-0.5">
-          <p className="text-sm font-semibold">@Aeonzz</p>
+          <p className="text-sm font-semibold">@ATASTECH</p>
           <p className="text-sm">Innovating in reverse.</p>
           <Link
             className={cn(
               buttonVariants({ variant: "secondary", size: "sm" }),
               "mt-2"
             )}
-            href="https://github.com/aeonzz"
+            href="https://github.com/atastech"
           >
             Follow
           </Link>

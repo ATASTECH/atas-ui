@@ -1,0 +1,7 @@
+{
+  "title": "HOOKS",
+  "description": "Custom React Hooks",
+  "icon": "Zap",
+  "root": true,
+  "pages": ["---Getting Started---", "index", "installation", "dark-mode", "---Hooks---", "...(hooks)"]
+}
