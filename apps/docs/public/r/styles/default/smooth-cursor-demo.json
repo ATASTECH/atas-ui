@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "smooth-cursor",
+  "name": "smooth-cursor-demo",
   "type": "registry:ui",
   "description": "A customizable, physics-based smooth cursor animation component with spring animations and rotation effects",
   "dependencies": [

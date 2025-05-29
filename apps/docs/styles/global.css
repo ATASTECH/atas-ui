@@ -128,6 +128,8 @@
   --animate-skeleton-shimmer: skeleton-shimmer 2s infinite ease-out;
   --animate-skeleton-gradient: skeleton-gradient 2s infinite ease-out;
   --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
 
   @keyframes fade-down {
     0% {
@@ -212,6 +214,23 @@
     }
     50% {
       background-position: 100% 50%;
+    }
+  }
+ 
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
     }
   }
 }

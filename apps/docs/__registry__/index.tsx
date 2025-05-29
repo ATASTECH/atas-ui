@@ -16,7 +16,23 @@ export const Index: Record<string, any> = {
         type: "registry:ui",
         target: ""
       }],
-      component: React.lazy(() => import("@/registry/default/ui/smooth-cursor.tsx")),
+      component: React.lazy(() => import("@/registry/atasui/smooth-cursor.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "smooth-cursor-demo": {
+      name: "smooth-cursor-demo",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/examples/smooth-cursor-demo.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/smooth-cursor-demo.tsx")),
       source: "",
       category: "",
       subcategory: "",
@@ -38,6 +54,53 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: []
     },
-
+    "toast-demo": {
+      name: "toast-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/examples/toast-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/toast-demo.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "toast-with-action": {
+      name: "toast-with-action",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/examples/toast-with-action.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/toast-with-action.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "toast-promise": {
+      name: "toast-promise",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/examples/toast-promise.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/toast-promise.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
   },
 }

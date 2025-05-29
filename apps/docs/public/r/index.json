@@ -3,11 +3,24 @@
     "name": "smooth-cursor",
     "type": "registry:ui",
     "dependencies": [
-      "@base-ui-components/react"
+      "@motion/react"
     ],
     "files": [
       {
         "path": "ui/smooth-cursor.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+      {
+    "name": "smooth-cursor-demo",
+    "type": "registry:ui",
+    "dependencies": [
+      "@motion/react"
+    ],
+    "files": [
+      {
+        "path": "ui/smooth-cursor-demo.tsx",
         "type": "registry:ui"
       }
     ]
