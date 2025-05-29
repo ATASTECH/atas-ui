@@ -126,7 +126,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             links: [
               ["Introduction", "/docs/ui"],
               ["Installtion", "/docs/ui/installation"],
-              ["Components", "/docs/ui/accordion"],
+              ["Components", "/docs/ui/smooth-cursor"],
             ],
           }}
         >

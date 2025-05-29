@@ -25,7 +25,7 @@ export const baseOptions: BaseLayoutProps = {
     },
     {
       text: "Components",
-      url: "/docs/ui/accordion",
+      url: "/docs/ui/smooth-cursor",
     },
     {
       type: "icon",

@@ -1,8 +1,5 @@
 import React from "react";
 import { notFound } from "next/navigation";
-
-import ModeToggle from "@/registry/default/examples/mode-toggle";
-
 import AccordionCard from "./_components/accordion-card";
 import AlertDialogCard from "./_components/alert-dialog-card";
 import CollapsibleCard from "./_components/collapsible-card";
@@ -25,7 +22,6 @@ export default function page() {
   return (
     <main className="relative space-y-3">
       <header className="bg-background sticky top-0 z-50 flex w-full justify-end border-b px-4 py-2">
-        <ModeToggle />
       </header>
       <div className="flex flex-col gap-3 p-4">
         <AccordionCard />

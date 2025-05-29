@@ -23,61 +23,6 @@ icon: Terminal
   </Step>
 
   <Step>
-    ### Install Base UI using a package manager.
-
-    ```package-install
-    npm i @base-ui-components/react
-    ```
-
-<Callout>
-  All components are in one package, and Base UI includes only what you use.
-  [learn more](https://base-ui.com/react/overview/quick-start#set-up-portals)
-</Callout>
-
-  </Step>
-  
-  <Step>
-    ### Setup portals
-
-    Apply the ```Root``` class to your app layout.
-
-    ```tsx title="layout.tsx"
-    <body>
-    // [!code highlight:3]
-      <div className="Root">
-        {children}
-      </div>
-    </body>
-    ```
-
-    Modify the ```globals.css``` file.
-
-    ```css title="globals.css"
-    @import "tailwindcss";
-
-    @layer base {
-      * {
-        @apply border-border;
-      }
-      body {
-        @apply bg-background text-foreground;
-      }
-      // [!code highlight:3]
-      .Root {
-        @apply isolate;
-      }
-
-    }
-    ```
-
-<Callout>
-  Learn more about
-  [portals](https://base-ui.com/react/overview/quick-start#set-up-portals).
-</Callout>
-
-  </Step>
-
-  <Step>
     ### 🎉 That's it!
 
     You can now start adding components to your project.

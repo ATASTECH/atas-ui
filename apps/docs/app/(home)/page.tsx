@@ -44,7 +44,7 @@ export default function HomePage() {
               Get Started
             </Link>
             <Link
-              href="/docs/ui/accordion"
+              href="/docs/ui/smooth-cursor"
               prefetch
               className={cn(
                 buttonVariants({ variant: "outline" }),

@@ -1,0 +1,104 @@
+---
+title: Smooth Cursor
+description: A customizable, physics-based smooth cursor animation component for React applications.
+preview: true
+new: true
+hot: true
+---
+
+<ComponentTabs name="smooth-cursor-demo" />
+
+## Features
+
+- 🎯 Smooth physics-based cursor animations
+- 🔄 Rotation effects based on movement direction
+- ⚡ Performance optimized with RAF
+- 🎨 Fully customizable cursor design
+- 📦 Lightweight and easy to implement
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://ui.atastech.com/r/smooth-cursor"
+```
+
+### Manual
+
+<Steps>
+
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="smooth-cursor" />
+
+  </Step>
+  
+  <Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+## Usage
+
+Import and use the component.
+
+```tsx
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
+
+export default function Page() {
+  return (
+    <>
+      <SmoothCursor />
+      {/* Your page content */}
+    </>
+  );
+}
+```
+
+## Props
+
+| Prop           | Type           | Default                | Description                                            |
+| -------------- | -------------- | ---------------------- | ------------------------------------------------------ |
+| `cursor`       | `JSX.Element`  | `<DefaultCursorSVG />` | Custom cursor component to replace the default cursor  |
+| `springConfig` | `SpringConfig` | See below              | Configuration object for the spring animation behavior |
+
+### SpringConfig Type
+
+```ts
+interface SpringConfig {
+  damping: number;
+  stiffness: number;
+  mass: number;
+  restDelta: number;
+}
+```
+
+### Default Spring Configuration
+
+```ts
+const defaultSpringConfig = {
+  damping: 45,
+  stiffness: 400,
+  mass: 1,
+  restDelta: 0.001,
+};
+```
+
+## Browser Support
+
+Compatible with all modern browsers that support:
+
+- `requestAnimationFrame`
+- CSS transforms
+- Pointer events
+
+## Accessibility
+
+- Users navigating via keyboard will not see the custom cursor
+- Consider providing alternative visual cues
+- Provide a toggle if users have motion sensitivity
+
+## Credits
+
+- Credit to [@Code_Parth](https://twitter.com/Code_Parth) for the original concept and implementation

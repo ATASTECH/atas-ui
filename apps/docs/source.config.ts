@@ -76,6 +76,7 @@ export const { docs, meta } = defineDocs({
         .optional(),
       breadcrumb: z.boolean().optional(),
       new: z.boolean().optional(),
+      hot: z.boolean().optional(),
     }),
   },
 });

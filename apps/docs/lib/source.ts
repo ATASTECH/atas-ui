@@ -3,7 +3,7 @@ import { docs, meta } from "@/.source";
 import { loader } from "fumadocs-core/source";
 import { createMDXSource } from "fumadocs-mdx";
 import { icons } from "lucide-react";
-
+import { ImFire } from "react-icons/im";
 import { Badge } from "@/components/ui/badge";
 
 export const source = loader({
@@ -19,11 +19,25 @@ export const source = loader({
   },
   pageTree: {
     attachFile(node, file) {
-      const additionalElement = (file?.data.data as { new?: boolean }).new
+      const flags = file?.data.data as { new?: boolean; hot?: boolean };
+      let badgeLabel: string | null = null;
+      if (flags?.new) badgeLabel = "New";
+      else if (flags?.hot) badgeLabel = "Hot";
+
+      const additionalElement = badgeLabel
         ? createElement(
             Badge,
-            { className: "ml-auto font-base text-xs", variant: "outline" },
-            "New"
+            {
+              className: `ml-auto font-base text-xs ${
+                badgeLabel === "Hot"
+                  ? "text-red-500 flex items-center justify-center"
+                  : badgeLabel === "New"
+                  ? "bg-[#adfa1d] text-zinc-900"
+                  : ""
+              }`,
+              variant: "default",
+            },
+            badgeLabel === "Hot" ? createElement(ImFire, { size: 18 }) : badgeLabel
           )
         : null;
 
