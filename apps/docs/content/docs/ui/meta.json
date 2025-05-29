@@ -3,5 +3,5 @@
   "description": "Components",
   "icon": "Component",
   "root": true,
-  "pages": ["---Getting Started---", "index", "installation", "dark-mode", "tailwind-v4", "---Components---", "...(components)"]
+  "pages": ["---Getting Started---", "index", "installation", "tailwind-v4", "---Components---", "...(components)"]
 }
