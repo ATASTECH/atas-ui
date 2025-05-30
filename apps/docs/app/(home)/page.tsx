@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { LineDecorator } from "@/components/line-decorator";
+//import Testimonials from "@/components/sections/testimonials";
+//import VideoTestimonials from "@/components/sections/video-testimonials";
 
 export default function HomePage() {
   return (
@@ -60,6 +62,8 @@ export default function HomePage() {
           />
         </div>
       </div>
+      {/* <Testimonials />
+      <VideoTestimonials /> */}
       <footer className="flex h-16 items-center justify-center">
         <div className="max-w-fd-container w-fit px-3">
           <p className="text-muted-foreground text-sm font-medium tracking-tight">
