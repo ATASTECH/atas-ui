@@ -41,8 +41,11 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 285.938);
-
-  /* Add custom tab colors */
+  --color-1: 0 100% 63%;
+  --color-2: 270 100% 63%;
+  --color-3: 210 100% 63%;
+  --color-4: 195 100% 63%;
+  --color-5: 90 100% 63%;
   --hooks-color: #F59E0B;
   --ui-color:    #3B82F6;
 }
@@ -130,7 +133,16 @@
   --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
 
+      @keyframes rainbow {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
   @keyframes fade-down {
     0% {
       opacity: 0;
