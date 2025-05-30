@@ -228,6 +228,7 @@ export const TweetMedia = ({ tweet }: { tweet: EnrichedTweet }) => {
 
 export const MagicTweet = ({
     tweet,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     components,
     className,
     ...props
@@ -281,7 +282,7 @@ export const TweetCard = async ({
 
     return (
         <Suspense fallback={fallback}>
-            <MagicTweet tweet={tweet} {...props} />
+            <MagicTweet tweet={tweet} components={components} {...props} />
         </Suspense>
     );
 };
