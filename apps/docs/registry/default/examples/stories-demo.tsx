@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { startTransition } from 'react';
-import Image from "next/image";
 import Stories from "@/components/ui/stories";
 
 interface Video {
@@ -120,7 +119,7 @@ const StoriesDemo: React.FC = () => {
               >
                 <div className="p-[2px] rounded-full bg-gradient-to-tr from-yellow-500 via-red-400 to-purple-500">
                   <div className="w-20 h-20 rounded-full overflow-hidden bg-white dark:bg-zinc-950">
-                    <Image
+                    <img
                       src={story.image}
                       alt={story.title}
                       width={84}
