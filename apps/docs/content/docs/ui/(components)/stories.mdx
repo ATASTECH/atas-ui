@@ -1,0 +1,106 @@
+---
+title: Stories
+description: A video-based story player with swipe and fade transitions, featuring GSAP animations and touch controls.
+preview: true
+new: true
+---
+
+<ComponentTabs name="stories-demo" />
+
+## Features
+
+- 🎬 Multi-video support with progress bars
+- 🌪️ Smooth fade transitions using Embla Carousel
+- 🌀 Animated modal entry/exit using GSAP
+- 🔇 Toggleable mute functionality
+- 🖐️ Tap/hold navigation and swipe-to-close on touch devices
+- 🔗 Optional description and link overlays per video
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://ui.atastech.com/r/stories"
+```
+
+### Manual
+
+<Steps>
+
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="stories" />
+
+  </Step>
+  
+  <Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+## Usage
+
+Import and use the component.
+
+```tsx
+import Stories from "@/components/ui/stories";
+
+const data = [
+  {
+    id: 1,
+    title: "Example",
+    image: "/profile.jpg",
+    updatedAt: "2024-06-01T10:00:00Z",
+    videos: [
+      {
+        id: 1,
+        video: "/video1.mp4",
+        description: "Short intro",
+        link: "https://example.com",
+      },
+    ],
+  },
+];
+
+export default function Page() {
+  return <Stories stories={data} onClose={() => {}} />;
+}
+```
+
+## Props
+
+| Prop                | Type                          | Default     | Description                                           |
+|---------------------|-------------------------------|-------------|-------------------------------------------------------|
+| `stories`           | `Story[]`                     | –           | An array of story objects                             |
+| `onClose`           | `() => void`                  | –           | Callback when the component is closed                 |
+| `initialStoryIndex` | `number`                      | `0`         | Optional index to start from                          |
+| `origin`            | `{ x: number; y: number; }`   | `undefined` | Entry point for GSAP animation origin (from click)    |
+
+### Story Type
+
+```ts
+interface Story {
+  id: number;
+  image: string;
+  title: string;
+  updatedAt: string;
+  videos?: {
+    id: number;
+    video: string;
+    description: string;
+    link: string | null;
+  }[];
+}
+```
+
+## Accessibility
+
+- Videos are muted by default for auto-play compatibility
+- Story transitions can be controlled via click/touch
+- Consider pausing or disabling autoplay for motion sensitivity
+
+## Dependency
+
+- Carousel transitions via [Embla Carousel](https://www.embla-carousel.com/)
+- Entry/exit animations via [GSAP](https://gsap.com/)

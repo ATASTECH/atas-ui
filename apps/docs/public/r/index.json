@@ -25,18 +25,15 @@
       }
     ]
   },
-  {
-    "name": "toast",
+      {
+    "name": "stories",
     "type": "registry:ui",
     "dependencies": [
-      "@base-ui-components/react"
-    ],
-    "registryDependencies": [
-      "https://ui.atastech.com/r/button"
+      "@motion/react"
     ],
     "files": [
       {
-        "path": "ui/toast.tsx",
+        "path": "ui/stories.tsx",
         "type": "registry:ui"
       }
     ]

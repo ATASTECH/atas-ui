@@ -19,9 +19,9 @@ export default function HomePage() {
           />
           <LineDecorator className="mr-auto mask-x-from-90% duration-1300" />
           <Badge variant="outline" className="py-1.5 px-3">
-            <span>Meter and Toast components are now available. 🎉</span>
+            <span>Stories components are now available. 🎉</span>
             <Link
-              href="/docs/ui/toast"
+              href="/docs/ui/stories"
               className="text-muted-foreground underline-offset-2 hover:underline"
             >
               Check it out.

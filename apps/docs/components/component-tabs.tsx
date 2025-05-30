@@ -69,7 +69,7 @@ export function ComponentTabs({
             className
           )}
         >
-          <div className="flex items-center justify-end gap-2 p-4">
+          <div className="flex items-center justify-end gap-2 p-2">
             <OpenInV0Button url={`https://ui.atastech.com/r/${name}.json`} />
             <Button
               onClick={() => setKey((prev) => prev + 1)}

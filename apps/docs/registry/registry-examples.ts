@@ -12,31 +12,11 @@ export const examples: Registry = [
     ],
   },
   {
-    name: "toast-demo",
+    name: "stories-demo",
     type: "registry:example",
     files: [
       {
-        path: "examples/toast-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-  },
-  {
-    name: "toast-with-action",
-    type: "registry:example",
-    files: [
-      {
-        path: "examples/toast-with-action.tsx",
-        type: "registry:example",
-      },
-    ],
-  },
-  {
-    name: "toast-promise",
-    type: "registry:example",
-    files: [
-      {
-        path: "examples/toast-promise.tsx",
+        path: "examples/stories-demo.tsx",
         type: "registry:example",
       },
     ],
