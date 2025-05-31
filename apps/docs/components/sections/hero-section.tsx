@@ -63,7 +63,7 @@ export function HeroSection() {
           <p className="text-muted-foreground max-w-sm text-center text-sm font-normal tracking-tight sm:max-w-2xl sm:text-lg md:max-w-3xl lg:max-w-4xl">
             {siteConfig.description}
           </p>
-          <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 items-center justify-center">
             <Link
               href="/docs/ui"
               prefetch
