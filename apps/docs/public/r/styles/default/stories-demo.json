@@ -5,7 +5,7 @@
   "description": "A full-screen embla-carousel based Instagram-style stories viewer with animated transitions and multiple videos",
   "dependencies": [
     "embla-carousel-react",
-    "framer-motion",
+    "embla-carousel-fade",
     "gsap",
     "@tabler/icons-react"
   ],
