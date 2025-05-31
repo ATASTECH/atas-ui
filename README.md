@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/ataastech/atas-ui">
+  <a href="https://github.com/atastech/atas-ui">
 
  <img src="https://avatars.githubusercontent.com/u/168239101?v=4" alt="Logo" width="60" height="60">
 
@@ -13,9 +13,9 @@
     
    <a href="https://ui.atastech.com/">Visit site</a>
     ·
-    <a href="https://github.com/ataastech/atas-ui/issues">Report Bug</a>
+    <a href="https://github.com/atastech/atas-ui/issues">Report Bug</a>
     ·
-    <a href="https://github.com/ataastech/atas-ui/issues">Request Feature</a>
+    <a href="https://github.com/atastech/atas-ui/issues">Request Feature</a>
   </p>
 
 </div>
