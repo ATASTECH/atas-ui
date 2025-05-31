@@ -10,7 +10,7 @@ interface Story {
   image: string;
   title: string;
   updatedAt: string;
-  videos?: { id: number; video: string; description: string; link: string | null }[];
+  videos?: { id: number; video: string; description: string | null; link: string | null }[];
 }
 
 const getTimeAgo = (dateString: string) => {

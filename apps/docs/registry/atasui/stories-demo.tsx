@@ -7,7 +7,7 @@ import Stories from "@/components/ui/stories";
 interface Video {
   id: number;
   video: string;
-  description: string;
+  description:  string | null;
   link: string | null;
 }
 
@@ -51,7 +51,13 @@ const StoriesDemo: React.FC = () => {
           {
             id: 101,
             video: "/images/story/story-1.mp4",
-            description: "Daily dose of cuteness: 1 duck, lots of joy 😍",
+            description: null,
+            link: null
+          },
+          {
+            id: 101,
+            video: "/images/story/story-4.mp4",
+            description: "",
             link: null
           },
         ]
