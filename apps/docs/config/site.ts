@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "atas/ui",
+  name: "Atas/ui",
   description: "Accessible and customizable components built with Tailwind and Shadcn.",
   url: "https://ui.atastech.com",
   ogImage:
