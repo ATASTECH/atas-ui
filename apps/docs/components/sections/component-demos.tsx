@@ -31,7 +31,7 @@ export default function ComponentDemos() {
           return (
             <div key={idx} className="max-w-5xl w-full mx-auto relative rounded-xl border bg-background py-4">
               <div className="flex items-center justify-end gap-2 p-2">
-                <OpenInV0Button url={`https://ui.atastech.com/r/${Component.name}.json`} />
+                <OpenInV0Button url={`https://ui.atastech.com/r/styles/default/${Component.name}.json`} />
                 <Button
                   onClick={resetKey}
                   className="flex items-center rounded-lg px-3 py-1"

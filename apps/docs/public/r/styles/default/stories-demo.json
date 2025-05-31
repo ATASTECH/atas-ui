@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stories-demo",
+  "type": "registry:ui",
+  "description": "A full-screen embla-carousel based Instagram-style stories viewer with animated transitions and multiple videos",
+  "dependencies": [
+    "embla-carousel-react",
+    "framer-motion",
+    "gsap",
+    "@tabler/icons-react"
+  ],
+  "files": [
+    {
+      "name": "stories-demo.tsx",
+      "type": "registry:ui",
+      "path": "registry/atasui/stories-demo.tsx"
+    },
+    {
+      "name": "stories.tsx",
+      "type": "registry:ui",
+      "path": "registry/atasui/stories.tsx"
+    }
+  ]
+}
