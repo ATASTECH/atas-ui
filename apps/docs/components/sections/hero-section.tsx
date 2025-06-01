@@ -57,7 +57,7 @@ export function HeroSection() {
             </Link>
           </Badge>
           <h1 className="from-foreground text-center text-4xl leading-tight font-bold tracking-tight sm:text-5xl md:text-6xl lg:leading-[1.1]">
-            Craft Your Component Library
+            Craft Your Components & Hooks Library
           </h1>
           <LineDecorator className="ml-auto mask-x-from-90% duration-1300" />
           <p className="text-muted-foreground max-w-sm text-center text-sm font-normal tracking-tight sm:max-w-2xl sm:text-lg md:max-w-3xl lg:max-w-4xl">
