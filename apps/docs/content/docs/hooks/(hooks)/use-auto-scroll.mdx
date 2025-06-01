@@ -2,10 +2,17 @@
 title: Use Auto Scroll
 description: Displays additional information on hover or focus.
 preview: true
-hot: true
+new: true
 ---
 
-<ComponentTabs name="use-auto-scroll" />
+<ComponentTabs name="auto-scroll-demo" />
+
+## Features
+
+- 🔄 Automatically scrolls to the newest item when new content is added
+- 🛑 Pauses auto-scroll when the user scrolls up or interacts manually
+- 🖱️ Handles wheel and touch events to accurately detect user intention
+- 🔄 Continues auto-scroll once the user scrolls back to the bottom threshold
 
 ## Installation
 
@@ -18,16 +25,191 @@ npx shadcn@latest add "https://ui.atastech.com/r/use-auto-scroll"
 ### Manual
 
 <Steps>
-
   <Step>
     Copy and paste the following code into your project.
 
-    <ComponentSource name="tooltip" />
-
+    <ComponentSource name="use-auto-scroll" />
   </Step>
-  
   <Step>Update the import paths to match your project setup.</Step>
-
 </Steps>
 
 ## Usage
+
+Import and use the hook or auto-scroll utility.
+
+```tsx
+import useAutoScroll from "@/hooks/use-auto-scroll";
+
+export default function Page() {
+  const [items, setItems] = useState<string[]>(["Item 1", "Item 2"]);
+  const listRef = useAutoScroll(true, [items]);
+
+  const addItem = () => {
+    setItems((prev) => [...prev, `Item ${prev.length + 1}`]);
+  };
+
+  return (
+    <div>
+      <ul ref={listRef} className="h-64 overflow-y-auto space-y-2">
+        {items.map((item, index) => (
+          <li key={index} className="p-2 bg-gray-100 rounded">
+            {item}
+          </li>
+        ))}
+      </ul>
+      <button onClick={addItem} className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">
+        Add Item
+      </button>
+    </div>
+  );
+}
+```
+
+Or use the `autoScrollListRef` directly in a component:
+
+```tsx
+"use client";
+
+import { autoScrollListRef } from "@/hooks/use-auto-scroll";
+import { useState, useRef, useEffect, type KeyboardEvent } from "react";
+
+interface Message {
+  sender: "user" | "ai";
+  text: string;
+}
+
+const UseAutoScrollDemo = () => {
+  const [messages, setMessages] = useState<Message[]>([
+    { sender: "ai", text: "Welcome to the chat!" },
+    { sender: "ai", text: "Feel free to add new messages." },
+  ]);
+  const [input, setInput] = useState("");
+  const listRef = useRef<HTMLUListElement>(null);
+  const typingIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const cleanupRef = useRef<(() => void) | null>(null);
+
+  const sendMessage = () => {
+    const trimmedInput = input.trim();
+    if (trimmedInput === "") return;
+
+    const userMessage: Message = { sender: "user", text: trimmedInput };
+    setMessages((prev) => [...prev, userMessage]);
+    setInput("");
+
+    const aiResponse = `Sint nisi eu cillum nulla officia incididunt irure laboris enim cillum cupidatat occaecat. 
+Duis adipisicing veniam exercitation quis anim. Exercitation consectetur tempor et consectetur dolor. 
+Cupidatat culpa eiusmod ex enim occaecat dolor sunt. Et et commodo qui ipsum nostrud ut et incididunt est cupidatat excepteur laborum. 
+Anim ullamco aliqua ad sit sint cupidatat esse esse.`;
+
+    const words = aiResponse.split(" ");
+    let currentWordIndex = 0;
+
+    setMessages((prev) => [...prev, { sender: "ai", text: "" }]);
+    const newAiMessageIndex = messages.length + 1;
+
+    typingIntervalRef.current = setInterval(() => {
+      setMessages((prevMessages) => {
+        if (!prevMessages[newAiMessageIndex]) return prevMessages;
+
+        const updatedMessages = [...prevMessages];
+        const currentAiMessage = updatedMessages[newAiMessageIndex];
+        currentAiMessage.text +=
+          (currentAiMessage.text ? " " : "") + words[currentWordIndex];
+        currentWordIndex++;
+
+        if (currentWordIndex >= words.length) {
+          if (typingIntervalRef.current) {
+            clearInterval(typingIntervalRef.current);
+            typingIntervalRef.current = null;
+          }
+        }
+        return updatedMessages;
+      });
+    }, 100);
+  };
+
+  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") sendMessage();
+  };
+
+  useEffect(() => {
+    if (listRef.current) {
+      cleanupRef.current = autoScrollListRef(listRef.current);
+    }
+    return () => {
+      if (typingIntervalRef.current) clearInterval(typingIntervalRef.current);
+      if (cleanupRef.current) cleanupRef.current();
+    };
+  }, [messages]);
+
+  return (
+    <div className="max-w-md w-full mx-auto mt-10 p-4 bg-neutral-50 dark:bg-neutral-800 border border-neutral-400/20 rounded-xl">
+      <h2 className="text-2xl font-semibold mb-4 text-center">
+        Chat Interface
+      </h2>
+
+      <ul
+        ref={listRef}
+        className="h-80 overflow-y-auto mb-4 space-y-2 rounded-md"
+      >
+        {messages.map((msg, index) => (
+          <li
+            key={`${index}-${msg.sender}-${msg.text}`}
+            className={`p-2 rounded-md break-words ${
+              msg.sender === "user"
+                ? "bg-sky-400/10 self-end border border-sky-400/20"
+                : "bg-white dark:bg-neutral-400/10 border border-neutral-400/20"
+            }`}
+          >
+            {msg.text}
+          </li>
+        ))}
+      </ul>
+
+      <div className="flex space-x-2">
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={handleKeyPress}
+          placeholder="Type your message..."
+          className="rounded-lg bg-neutral-400/20 border border-neutral-400/20 w-full placeholder:text-neutral-400"
+        />
+        <button
+          type="button"
+          onClick={sendMessage}
+          className="rounded-lg bg-neutral-400/20 border border-neutral-400/20 px-4"
+        >
+          Send
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default UseAutoScrollDemo;
+```
+
+## API / Parameters
+
+### `useAutoScroll(enabled: boolean, deps: any[]): RefObject<HTMLUListElement>`
+- **enabled**: `boolean` — If `true`, auto-scroll is active. If `false`, no automatic scrolling occurs.
+- **deps**: `any[]` — Dependency array to re-run the hook effect (e.g., `[items]` or `[messages]`), so auto-scroll logic can observe changes and scroll when new content is added.
+- **Returns**: A `RefObject<HTMLUListElement>` that should be attached to the `<ul>` element you want to auto-scroll. Example: `const listRef = useAutoScroll(true, [items]);`
+
+### `autoScrollListRef(list: HTMLUListElement): () => void`
+- **list**: `HTMLUListElement` — The actual DOM `<ul>` element to observe and scroll. Pass `listRef.current` inside a `useEffect`.
+- **Returns**: A cleanup function that removes event listeners and disconnects the `MutationObserver`. Call this in the cleanup phase of your `useEffect`.
+
+## Behavior Details
+
+- **Automatic Pausing**: When a user scrolls up (via mouse wheel or touch), `shouldAutoScroll` is set to `false`. This prevents the list from jumping down while the user is reading earlier content.
+- **Resuming Auto-Scroll**: If the scroll position returns near the bottom threshold (within half the scroll height), `shouldAutoScroll` becomes `true` again. The next content addition will scroll the list to the bottom.
+- **Cleanup**: Always invoke the cleanup function returned by `autoScrollListRef` inside `useEffect` cleanup. Otherwise, event listeners and observers will persist after unmount.
+- **Performance Considerations**: The `MutationObserver` watches for new child nodes. In very high-frequency updates, consider throttling incoming updates or narrowing observation options to avoid excessive callbacks.
+
+## Notes
+
+- **Mobile / Touch Events**: The hook listens for `touchstart` and `touchmove` to detect upward swipes and pause auto-scroll appropriately. This ensures better UX on touch devices.
+- **CSS Classes**: The examples use Tailwind classes (e.g., `h-80 overflow-y-auto rounded-md`). You can adjust height, spacing, or border styles to fit your design.
+- **Compatibility**: Tested with React 18 and Next.js 14+ in TypeScript environments. Ensure your project has proper TS types for `useRef<HTMLUListElement>`.

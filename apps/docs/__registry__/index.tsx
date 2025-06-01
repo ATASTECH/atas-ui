@@ -70,5 +70,37 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: []
     },
+      "use-auto-scroll": {
+      name: "use-auto-scroll",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/hooks/use-auto-scroll.ts",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/hooks/use-auto-scroll.ts")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "auto-scroll-demo": {
+      name: "auto-scroll-demo",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/examples/auto-scroll-demo.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/auto-scroll-demo.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
   },
 }

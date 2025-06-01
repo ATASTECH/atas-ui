@@ -21,4 +21,14 @@ export const examples: Registry = [
       },
     ],
   },
+   {
+    name: "auto-scroll-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/auto-scroll-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];
