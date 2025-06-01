@@ -89,7 +89,7 @@ Anim ullamco aliqua ad sit sint cupidatat esse esse.`;
   return (
     <div className="max-w-md w-full mx-auto mt-10 p-4 bg-neutral-50 dark:bg-neutral-800 border border-neutral-400/20 rounded-xl">
       <h2 className="text-2xl font-semibold mb-4 text-center">
-        Chat Interface
+        Chat
       </h2>
       <MessageList messages={messages} />
       <div className="flex space-x-2">
