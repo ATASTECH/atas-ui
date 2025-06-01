@@ -31,6 +31,9 @@ const UseAutoScrollDemo = () => {
     const aiResponse = `Sint nisi eu cillum nulla officia incididunt irure laboris enim cillum cupidatat occaecat. 
 Duis adipisicing veniam exercitation quis anim. Exercitation consectetur tempor et consectetur dolor. 
 Cupidatat culpa eiusmod ex enim occaecat dolor sunt. Et et commodo qui ipsum nostrud ut et incididunt est cupidatat excepteur laborum. 
+Anim ullamco aliqua ad sit sint cupidatat esse esse.Sint nisi eu cillum nulla officia incididunt irure laboris enim cillum cupidatat occaecat. 
+Duis adipisicing veniam exercitation quis anim. Exercitation consectetur tempor et consectetur dolor. 
+Cupidatat culpa eiusmod ex enim occaecat dolor sunt. Et et commodo qui ipsum nostrud ut et incididunt est cupidatat excepteur laborum. 
 Anim ullamco aliqua ad sit sint cupidatat esse esse.`;
 
     // Break down the AI response into words
